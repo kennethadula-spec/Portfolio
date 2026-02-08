@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kennethadula.pages.dev/sitemap.xml
-  
