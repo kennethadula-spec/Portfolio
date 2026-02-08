@@ -9,11 +9,11 @@
   <meta property="og:title" content="Kenneth Adula | Virtual Assistant • Customer Support • Data Support" />
   <meta property="og:description" content="Admin support, customer support, lead research, and data/QA support. View anonymized work samples." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kennethadula-spec.github.io/Portfolio/" />
-  <meta property="og:image" content="https://kennethadula-spec.github.io/Portfolio/profile.jpg" />
+  <meta property="og:url" content="https://kennethadula.pages.dev/" />
+  <meta property="og:image" content="https://kennethadula.pages.dev/profile.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://kennethadula-spec.github.io/Portfolio/profile.jpg" />
-  <link rel="canonical" href="https://kennethadula-spec.github.io/Portfolio/" />
+  <meta name="twitter:image" content="https://kennethadula.pages.dev/profile.jpg" />
+  <link rel="canonical" href="https://kennethadula.pages.dev/" />
 
   <style>
     :root{
@@ -46,7 +46,8 @@
     .nav{max-width:1040px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .dot{width:10px;height:10px;border-radius:999px;background:rgba(99,102,241,.95);box-shadow:0 0 0 6px rgba(99,102,241,.18)}
-    .links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+        .brandLogo{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block;}
+.links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
     .links a{color:var(--muted);font-weight:600;font-size:14px}
     .links a:hover{color:var(--text)}
     .wrap{max-width:1040px;margin:0 auto;padding:24px 18px 60px}
@@ -260,7 +261,7 @@
 
 <header>
   <div class="nav">
-    <div class="brand"><span class="dot"></span> <span>Kenneth Adula</span></div>
+    <div class="brand"><img class="brandLogo" src="./logo.png" alt="KA logo" /> <span>Kenneth Adula</span></div>
     <div class="links">
       <a href="#top">Home</a>
       <a href="#services">Services</a>
@@ -296,7 +297,7 @@
       <div class="btns">
         <a class="btn primary" href="#contact">✉️ Contact</a>
         <a class="btn" href="#samples">📁 Sample Work</a>
-        <a class="btn" href="./Kenneth_Adula_Resume_Modern_2026_v2.pdf?v=20260208" target="_blank" rel="noopener noreferrer">📄 View Resume</a>
+        <a class="btn" href="./Kenneth_Adula_Resume_Modern_2026_v2.pdf" target="_blank" rel="noopener noreferrer">📄 View Resume</a>
       </div>
 
       <div class="strip" id="tools">
@@ -395,7 +396,7 @@
 
   <section class="section" id="samples">
     <h2>Work Samples (Anonymized)</h2>
-    <p class="lead">Download the files below. (Make sure these files are uploaded in the same GitHub repo folder as this page.)</p>
+    <p class="lead">Download the files below. (Make sure these files are uploaded in the same Cloudflare deployment.)</p>
 
     <div class="grid">
       <div class="card" id="sample-kpi">
@@ -450,8 +451,8 @@
         <h3>Resume (PDF)</h3>
         <p class="small">View or download the latest copy.</p>
         <div class="btns">
-          <a class="btn" href="./Kenneth_Adula_Resume_Modern_2026_v2.pdf?v=20260208" target="_blank" rel="noopener noreferrer">View PDF</a>
-          <a class="btn primary" href="./Kenneth_Adula_Resume_Modern_2026_v2.pdf?v=20260208" download>Download PDF</a>
+          <a class="btn" href="./Kenneth_Adula_Resume_Modern_2026_v2.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
+          <a class="btn primary" href="./Kenneth_Adula_Resume_Modern_2026_v2.pdf" download>Download PDF</a>
         </div>
         <p class="note">Tip: Office may show “Protected View” for downloaded files — that’s normal.</p>
       </div>
@@ -492,27 +493,20 @@
   </section>
 
   <footer>
-    <div>© <span id="y"></span> Kenneth Adula • Hosted on GitHub Pages • Cached via Cloudflare</div>
+    <div>© <span id="y"></span> Kenneth Adula • Built for Cloudflare Pages <img src="logo.png" alt="KA logo" style="width:20px;height:20px;vertical-align:middle;margin-left:10px;" /></div>
   </footer>
 </main>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const y = document.getElementById("y");
-  if (y) y.textContent = new Date().getFullYear();
-
+  document.getElementById("y").textContent = new Date().getFullYear();
   const toTop = document.getElementById("toTop");
-  if (!toTop) return;
-
   const toggleToTop = () => {
+    if (!toTop) return;
     toTop.style.display = (window.scrollY > 500) ? "flex" : "none";
   };
-
-  window.addEventListener("scroll", toggleToTop, { passive: true });
+  window.addEventListener("scroll", toggleToTop);
   toggleToTop();
-
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-});
 </script>
 
 <button class="toTop" id="toTop" aria-label="Scroll to top">↑</button>
