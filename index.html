@@ -265,63 +265,6 @@
       .card, .btn, .pill{ transition:none !important; }
     }
 
-
-    .btn{
-      transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
-    }
-    .btn:focus-visible{
-      outline: 2px solid rgba(99,102,241,.75);
-      outline-offset: 3px;
-    }
-    .btn.primary{
-      background: rgba(99,102,241,.22);
-      border-color: rgba(99,102,241,.55);
-      box-shadow: 0 10px 20px rgba(99,102,241,.14);
-    }
-    .btn.primary:hover{
-      background: rgba(99,102,241,.30);
-      border-color: rgba(99,102,241,.70);
-      box-shadow: 0 14px 24px rgba(99,102,241,.18);
-    }
-    .textLink{
-      display:inline-flex;
-      margin-top:10px;
-      color: rgba(229,231,235,.9);
-      font-weight:800;
-      font-size:14px;
-      text-decoration: underline;
-      text-decoration-color: rgba(99,102,241,.55);
-      text-underline-offset: 4px;
-    }
-    .textLink:hover{ text-decoration-color: rgba(99,102,241,.9); }
-    .disclaimer{
-      margin-top:10px;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-
-    .links a{
-      position:relative;
-      padding:6px 2px;
-    }
-    .links a.active{
-      color: var(--text);
-    }
-    .links a.active::after{
-      content:"";
-      position:absolute;
-      left:0; right:0; bottom:-6px;
-      height:2px;
-      border-radius:999px;
-      background: rgba(99,102,241,.85);
-    }
-
 </style>
 </head>
 <body id="top">
@@ -329,7 +272,7 @@
 <header>
   <div class="nav">
     <a class="brand" href="#top" aria-label="Home">
-      <img class="brandLogo" src="./assets/images/logo.png" alt="Kenneth Adula logo" width="34" height="34" decoding="async" />
+      <img class="brandLogo" src="./assets/images/logo.png" alt="Kenneth Adula logo" />
       <span>Kenneth Adula</span>
     </a>
     <div class="links">
@@ -346,7 +289,7 @@
 
 <main class="wrap">
   <section class="hero">
-    <img class="avatar" src="./assets/images/profile.jpg" alt="Portrait of Kenneth Adula" width="220" height="220" decoding="async" fetchpriority="high" />
+    <img class="avatar" src="./assets/images/profile.jpg" alt="Kenneth Adula" />
     <div>
       <div class="kicker">Universal Remote Support</div>
       <div class="availability" aria-label="Availability status"><span class="dot" aria-hidden="true"></span><span><strong>Available</strong> • PH timezone • 6–10 hrs/day</span></div>
@@ -365,10 +308,10 @@
       </div>
 
       <div class="btns">
-        <a class="btn primary" href="#samples">📁 View Sample Work</a>
-        <a class="btn" href="#contact">✉️ Contact</a>
+        <a class="btn primary" href="#contact">✉️ Contact</a>
+        <a class="btn" href="#samples">📁 Sample Work</a>
+        <a class="btn" href="./assets/docs/Kenneth_Adula_Resume_Modern_2026_v2.pdf?v=20260208" target="_blank" rel="noopener noreferrer">📄 View Resume</a>
       </div>
-      <a class="textLink" href="./assets/docs/Kenneth_Adula_Resume_Modern_2026_v2.pdf?v=20260208" target="_blank" rel="noopener noreferrer">📄 View Resume (PDF)</a>
 
       <div class="strip" id="tools">
         <span class="pill"><span class="ico">📊</span>Excel</span>
@@ -381,8 +324,6 @@
         <span class="pill"><span class="ico">📹</span>Google Meet</span>
         <span class="pill"><span class="ico">🛠️</span>ServiceTitan (CRM)</span>
         <span class="pill"><span class="ico">🤖</span>AI Tools</span>
-        <span class="pill"><span class="ico">☁️</span>OneDrive</span>
-        <span class="pill"><span class="ico">💻</span>HTML/CSS</span>
       </div>
 
       <p class="note">Samples below are anonymized for confidentiality.</p>
@@ -469,15 +410,11 @@
   <section class="section" id="samples">
     <h2>Work Samples (Anonymized)</h2>
     <p class="lead">Download the files below. (Make sure these files are uploaded in the same GitHub repo folder as this page.)</p>
-    <div class="disclaimer">
-      <strong>Privacy note:</strong> All downloads are anonymized or dummy data (no client info).
-    </div>
-
 
     <div class="grid">
       <div class="card" id="sample-kpi">
         <h3>KPI & Lead Tracker (Excel)</h3>
-        <p class="small"><strong>What’s inside:</strong> KPI dashboard, formulas, filters, simple rollups.</p>
+        <p class="small">Tracking + simple KPI rollups for reporting.</p>
         <div class="btns">
           <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./assets/samples/Lead_Tracker_and_KPI_Sample.xlsx" href="./assets/samples/Lead_Tracker_and_KPI_Sample.xlsx">View .xlsx</a>
         </div>
@@ -485,7 +422,7 @@
 
       <div class="card" id="sample-leadsheet">
         <h3>Lead Sheet Sample (Excel)</h3>
-        <p class="small"><strong>What’s inside:</strong> lead sheet columns, status tracking, follow-up fields.</p>
+        <p class="small">Sample lead sheet format for outreach tracking.</p>
         <div class="btns">
           <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./assets/samples/Sample_Lead_Sheets.xlsx" href="./assets/samples/Sample_Lead_Sheets.xlsx">View .xlsx</a>
         </div>
@@ -493,7 +430,7 @@
 
       <div class="card" id="sample-sop">
         <h3>Inbox & Follow-ups SOP (Doc)</h3>
-        <p class="small"><strong>What’s inside:</strong> inbox triage steps, SLAs, follow-up schedule, escalation.</p>
+        <p class="small">Triage flow, follow-up timing, and escalation steps.</p>
         <div class="btns">
           <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./assets/samples/SOP_Inbox_and_Followups.docx" href="./assets/samples/SOP_Inbox_and_Followups.docx">View .docx</a>
         </div>
@@ -501,7 +438,7 @@
 
       <div class="card">
         <h3>Support Email Templates (Doc)</h3>
-        <p class="small"><strong>What’s inside:</strong> copy-ready email templates (refunds, delays, updates, FAQs).</p>
+        <p class="small">Ready-to-use templates for common support scenarios.</p>
         <div class="btns">
           <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./assets/samples/Support_Email_Templates.docx" href="./assets/samples/Support_Email_Templates.docx">View .docx</a>
         </div>
@@ -509,7 +446,7 @@
 
       <div class="card">
         <h3>Cold Call & Follow-up Scripts (Doc)</h3>
-        <p class="small"><strong>What’s inside:</strong> opening lines, objections, follow-up scripts, call structure.</p>
+        <p class="small">Objection handling + consistent call flow.</p>
         <div class="btns">
           <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./assets/samples/Cold_Call_and_Followup_Scripts.docx" href="./assets/samples/Cold_Call_and_Followup_Scripts.docx">View .docx</a>
         </div>
@@ -517,7 +454,7 @@
 
       <div class="card" id="sample-casetracking">
         <h3>Case Tracking Sample (Excel)</h3>
-        <p class="small"><strong>What’s inside:</strong> case list layout, key fields, tracking structure.</p>
+        <p class="small">Anonymized case list layout & structure for tracking.</p>
         <div class="btns">
           <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./assets/samples/LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx" href="./assets/samples/LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx">View .xlsx</a>
         </div>
@@ -544,15 +481,6 @@
       I’m a remote support professional focused on accuracy, follow-through, and clear communication.
       I’m comfortable working across admin, customer support, lead research, and data/QA tasks — and I adapt quickly to new tools and processes.
     </p>
-    <div class="grid" style="margin-top:12px">
-      <div class="card" style="grid-column: span 12">
-        <h3 style="margin:0 0 8px">Work Style</h3>
-        <p class="small" style="margin:0;color:var(--muted)">
-          Daily updates • Clear file naming • Documentation-first • Fast replies • Quality checks before handoff
-        </p>
-      </div>
-    </div>
-
 
     <div class="grid">
       <div class="card">
@@ -598,24 +526,6 @@
   toggleToTop();
 
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-  // Active section highlight in sticky nav
-  const navLinks = Array.from(document.querySelectorAll(".links a[href^='#']"));
-  const sections = navLinks
-    .map(a => document.querySelector(a.getAttribute("href")))
-    .filter(Boolean);
-
-  const setActive = (id) => {
-    navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
-  };
-
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries.filter(e => e.isIntersecting).sort((a,b)=> b.intersectionRatio - a.intersectionRatio)[0];
-    if(visible && visible.target && visible.target.id) setActive(visible.target.id);
-  }, { rootMargin: "-30% 0px -60% 0px", threshold: [0.05, 0.12, 0.2, 0.35] });
-
-  sections.forEach(s => io.observe(s));
-
 });
 </script>
 
