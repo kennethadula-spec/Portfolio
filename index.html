@@ -193,32 +193,82 @@
     </div>
   </section>
 
+  <section class="section" id="case-studies">
+    <h2>Case Studies</h2>
+    <p class="lead">Real-world style examples based on my workflow. All details are generalized/anonymized.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Operations Tracker + KPI Snapshot</h3>
+        <p class="small"><b>Problem:</b> Team needed a simple way to track daily work and quickly see progress.</p>
+        <p class="small"><b>What I did:</b> Built a structured tracker with clear statuses, date fields, and KPI rollups for weekly reporting.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">Lead_Tracker_and_KPI_Sample.xlsx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-kpi">View Sample</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Inbox Triage + Follow-up SOP</h3>
+        <p class="small"><b>Problem:</b> Messages were getting missed and follow-ups were inconsistent.</p>
+        <p class="small"><b>What I did:</b> Created a repeatable workflow for categorizing, prioritizing, escalating, and tracking follow-ups.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">SOP_Inbox_and_Followups.docx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-sop">View SOP</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Lead Sheet Standardization</h3>
+        <p class="small"><b>Problem:</b> Lead lists came from different sources and formats, causing duplicates and messy notes.</p>
+        <p class="small"><b>What I did:</b> Standardized columns, cleaned formatting, and organized entries for easier outreach and CRM import.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">Sample_Lead_Sheets.xlsx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-leadsheet">View Sample</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Case Tracking Layout</h3>
+        <p class="small"><b>Problem:</b> Needed consistent day-by-day tracking across multiple categories without losing structure.</p>
+        <p class="small"><b>What I did:</b> Organized sheets with consistent headers, clean formatting, and status fields for tracking updates.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-casetracking">View Sample</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">Want a role-specific version (VA / CSR / Lead Gen / Data QA)? I can tailor this page for the position while keeping it universal.</p>
+  </section>
+
+
   <section class="section" id="samples">
     <h2>Work Samples (Anonymized)</h2>
     <p class="lead">Download the files below. (Make sure these files are uploaded in the same Cloudflare deployment.)</p>
 
     <div class="grid">
-      <div class="card">
+      <div class="card" id="sample-kpi">
         <h3>KPI & Lead Tracker (Excel)</h3>
         <p class="small">Tracking + simple KPI rollups for reporting.</p>
         <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./Lead_Tracker_and_KPI_Sample.xlsx')" href="./Lead_Tracker_and_KPI_Sample.xlsx">View .xlsx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Lead_Tracker_and_KPI_Sample.xlsx" href="./Lead_Tracker_and_KPI_Sample.xlsx">View .xlsx</a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="sample-leadsheet">
         <h3>Lead Sheet Sample (Excel)</h3>
         <p class="small">Sample lead sheet format for outreach tracking.</p>
         <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./Sample_Lead_Sheets.xlsx')" href="./Sample_Lead_Sheets.xlsx">View .xlsx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Sample_Lead_Sheets.xlsx" href="./Sample_Lead_Sheets.xlsx">View .xlsx</a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="sample-sop">
         <h3>Inbox & Follow-ups SOP (Doc)</h3>
         <p class="small">Triage flow, follow-up timing, and escalation steps.</p>
         <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./SOP_Inbox_and_Followups.docx')" href="./SOP_Inbox_and_Followups.docx">View .docx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./SOP_Inbox_and_Followups.docx" href="./SOP_Inbox_and_Followups.docx">View .docx</a>
         </div>
       </div>
 
@@ -226,7 +276,7 @@
         <h3>Support Email Templates (Doc)</h3>
         <p class="small">Ready-to-use templates for common support scenarios.</p>
         <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./Support_Email_Templates.docx')" href="./Support_Email_Templates.docx">View .docx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Support_Email_Templates.docx" href="./Support_Email_Templates.docx">View .docx</a>
         </div>
       </div>
 
@@ -234,15 +284,15 @@
         <h3>Cold Call & Follow-up Scripts (Doc)</h3>
         <p class="small">Objection handling + consistent call flow.</p>
         <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./Cold_Call_and_Followup_Scripts.docx')" href="./Cold_Call_and_Followup_Scripts.docx">View .docx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Cold_Call_and_Followup_Scripts.docx" href="./Cold_Call_and_Followup_Scripts.docx">View .docx</a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="sample-casetracking">
         <h3>Case Tracking Sample (Excel)</h3>
         <p class="small">Anonymized case list layout & structure for tracking.</p>
         <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx')" href="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx">View .xlsx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx" href="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx">View .xlsx</a>
         </div>
       </div>
 
@@ -256,56 +306,6 @@
         <p class="note">Tip: Office may show “Protected View” for downloaded files — that’s normal.</p>
       </div>
     </div>
-  </section>
-
-
-  <section class="section" id="case-studies">
-    <h2>Case Studies</h2>
-    <p class="lead">Real-world style examples based on my workflow. All details are generalized/anonymized.</p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Operations Tracker + KPI Snapshot</h3>
-        <p class="small"><b>Problem:</b> Team needed a simple way to track daily work and quickly see progress.</p>
-        <p class="small"><b>What I did:</b> Built a structured tracker with clear statuses, date fields, and KPI rollups for weekly reporting.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">Lead_Tracker_and_KPI_Sample.xlsx</span></p>
-        <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./Lead_Tracker_and_KPI_Sample.xlsx')" href="./Lead_Tracker_and_KPI_Sample.xlsx">View Sample</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Inbox Triage + Follow-up SOP</h3>
-        <p class="small"><b>Problem:</b> Messages were getting missed and follow-ups were inconsistent.</p>
-        <p class="small"><b>What I did:</b> Created a repeatable workflow for categorizing, prioritizing, escalating, and tracking follow-ups.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">SOP_Inbox_and_Followups.docx</span></p>
-        <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./SOP_Inbox_and_Followups.docx')" href="./SOP_Inbox_and_Followups.docx">View SOP</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Lead Sheet Standardization</h3>
-        <p class="small"><b>Problem:</b> Lead lists came from different sources and formats, causing duplicates and messy notes.</p>
-        <p class="small"><b>What I did:</b> Standardized columns, cleaned formatting, and organized entries for easier outreach and CRM import.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">Sample_Lead_Sheets.xlsx</span></p>
-        <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./Sample_Lead_Sheets.xlsx')" href="./Sample_Lead_Sheets.xlsx">View Sample</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Case Tracking Layout</h3>
-        <p class="small"><b>Problem:</b> Needed consistent day-by-day tracking across multiple categories without losing structure.</p>
-        <p class="small"><b>What I did:</b> Organized sheets with consistent headers, clean formatting, and status fields for tracking updates.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx</span></p>
-        <div class="btns">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer" onclick="return officeView('./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx')" href="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx">View Sample</a>
-        </div>
-      </div>
-    </div>
-
-    <p class="note">Want a role-specific version (VA / CSR / Lead Gen / Data QA)? I can tailor this page for the position while keeping it universal.</p>
   </section>
 
 
@@ -372,6 +372,14 @@
     }
     return false;
   }
+
+  // Bind "View" buttons/links using data-office attributes (keeps markup cleaner).
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-office]");
+    if (!el) return;
+    e.preventDefault();
+    officeView(el.getAttribute("data-office"));
+  });
 </script>
 
 </body>
