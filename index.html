@@ -112,7 +112,88 @@
     }
     .toTop:hover{transform: translateY(-1px); transition: .15s ease}
     
-  </style>
+  
+
+    /* --- Livelier UI (micro-interactions) --- */
+    .card, .btn, .pill{
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      will-change: transform;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.16);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+    }
+    .btn:active{
+      transform: translateY(0px) scale(.98);
+    }
+
+    /* Quick stats strip */
+    .stats{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap:10px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding:10px 12px;
+      min-height: 58px;
+    }
+    .statNum{
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 13px;
+      margin-bottom:4px;
+    }
+    .statLbl{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    @media (max-width: 720px){
+      .stats{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    /* Tool badges (icons + labels) */
+    .strip .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+    }
+    .pill .ico{
+      width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    /* Scroll reveal (subtle) */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.in{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce){
+      .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+      .card, .btn, .pill{ transition:none !important; }
+    }
+
+</style>
 </head>
 <body id="top">
 
@@ -142,6 +223,14 @@
         Strong documentation, consistent follow-ups, and detail-focused execution.
       </p>
 
+
+      <div class="stats" aria-label="Quick highlights">
+        <div class="stat"><div class="statNum">Detail-focused</div><div class="statLbl">Clean data, consistent formatting</div></div>
+        <div class="stat"><div class="statNum">Process-ready</div><div class="statLbl">SOPs, checklists, repeatable workflow</div></div>
+        <div class="stat"><div class="statNum">Follow-ups</div><div class="statLbl">Inbox triage & timely next steps</div></div>
+        <div class="stat"><div class="statNum">Reporting</div><div class="statLbl">Trackers & weekly updates for visibility</div></div>
+      </div>
+
       <div class="btns">
         <a class="btn primary" href="#contact">✉️ Contact</a>
         <a class="btn" href="#samples">📁 Sample Work</a>
@@ -149,17 +238,12 @@
       </div>
 
       <div class="strip" id="tools">
-        <span class="pill">Google Sheets</span>
-        <span class="pill">Excel</span>
-        <span class="pill">Docs</span>
-        <span class="pill">Gmail</span>
-        <span class="pill">Drive</span>
-        <span class="pill">Canva</span>
-        <span class="pill">CRMs</span>
-        <span class="pill">Slack / Teams</span>
-        <span class="pill">Trello / ClickUp</span>
-        <span class="pill">Detail-oriented</span>
-        <span class="pill">Process-driven</span>
+        <span class="pill"><span class="ico">📊</span>Excel</span>
+        <span class="pill"><span class="ico">🧾</span>Google Sheets</span>
+        <span class="pill"><span class="ico">🎨</span>Canva</span>
+        <span class="pill"><span class="ico">✉️</span>Gmail</span>
+        <span class="pill"><span class="ico">☁️</span>Google Drive</span>
+        <span class="pill"><span class="ico">✅</span>Trello / ClickUp</span>
       </div>
 
       <p class="note">Samples below are anonymized for confidentiality.</p>
@@ -193,32 +277,82 @@
     </div>
   </section>
 
+  <section class="section" id="case-studies">
+    <h2>Case Studies</h2>
+    <p class="lead">Real-world style examples based on my workflow. All details are generalized/anonymized.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Operations Tracker + KPI Snapshot</h3>
+        <p class="small"><b>Problem:</b> Team needed a simple way to track daily work and quickly see progress.</p>
+        <p class="small"><b>What I did:</b> Built a structured tracker with clear statuses, date fields, and KPI rollups for weekly reporting.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">Lead_Tracker_and_KPI_Sample.xlsx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-kpi">View Sample</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Inbox Triage + Follow-up SOP</h3>
+        <p class="small"><b>Problem:</b> Messages were getting missed and follow-ups were inconsistent.</p>
+        <p class="small"><b>What I did:</b> Created a repeatable workflow for categorizing, prioritizing, escalating, and tracking follow-ups.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">SOP_Inbox_and_Followups.docx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-sop">View SOP</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Lead Sheet Standardization</h3>
+        <p class="small"><b>Problem:</b> Lead lists came from different sources and formats, causing duplicates and messy notes.</p>
+        <p class="small"><b>What I did:</b> Standardized columns, cleaned formatting, and organized entries for easier outreach and CRM import.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">Sample_Lead_Sheets.xlsx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-leadsheet">View Sample</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Case Tracking Layout</h3>
+        <p class="small"><b>Problem:</b> Needed consistent day-by-day tracking across multiple categories without losing structure.</p>
+        <p class="small"><b>What I did:</b> Organized sheets with consistent headers, clean formatting, and status fields for tracking updates.</p>
+        <p class="small"><b>Deliverable:</b> <span class="mono">LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx</span></p>
+        <div class="btns">
+          <a class="btn primary" href="#sample-casetracking">View Sample</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">Want a role-specific version (VA / CSR / Lead Gen / Data QA)? I can tailor this page for the position while keeping it universal.</p>
+  </section>
+
+
   <section class="section" id="samples">
     <h2>Work Samples (Anonymized)</h2>
     <p class="lead">Download the files below. (Make sure these files are uploaded in the same Cloudflare deployment.)</p>
 
     <div class="grid">
-      <div class="card">
+      <div class="card" id="sample-kpi">
         <h3>KPI & Lead Tracker (Excel)</h3>
         <p class="small">Tracking + simple KPI rollups for reporting.</p>
         <div class="btns">
-          <a class="btn primary" href="./Lead_Tracker_and_KPI_Sample.xlsx" download>Download .xlsx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Lead_Tracker_and_KPI_Sample.xlsx" href="./Lead_Tracker_and_KPI_Sample.xlsx">View .xlsx</a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="sample-leadsheet">
         <h3>Lead Sheet Sample (Excel)</h3>
         <p class="small">Sample lead sheet format for outreach tracking.</p>
         <div class="btns">
-          <a class="btn primary" href="./Sample_Lead_Sheets.xlsx" download>Download .xlsx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Sample_Lead_Sheets.xlsx" href="./Sample_Lead_Sheets.xlsx">View .xlsx</a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="sample-sop">
         <h3>Inbox & Follow-ups SOP (Doc)</h3>
         <p class="small">Triage flow, follow-up timing, and escalation steps.</p>
         <div class="btns">
-          <a class="btn primary" href="./SOP_Inbox_and_Followups.docx" download>Download .docx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./SOP_Inbox_and_Followups.docx" href="./SOP_Inbox_and_Followups.docx">View .docx</a>
         </div>
       </div>
 
@@ -226,7 +360,7 @@
         <h3>Support Email Templates (Doc)</h3>
         <p class="small">Ready-to-use templates for common support scenarios.</p>
         <div class="btns">
-          <a class="btn primary" href="./Support_Email_Templates.docx" download>Download .docx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Support_Email_Templates.docx" href="./Support_Email_Templates.docx">View .docx</a>
         </div>
       </div>
 
@@ -234,15 +368,15 @@
         <h3>Cold Call & Follow-up Scripts (Doc)</h3>
         <p class="small">Objection handling + consistent call flow.</p>
         <div class="btns">
-          <a class="btn primary" href="./Cold_Call_and_Followup_Scripts.docx" download>Download .docx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./Cold_Call_and_Followup_Scripts.docx" href="./Cold_Call_and_Followup_Scripts.docx">View .docx</a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="sample-casetracking">
         <h3>Case Tracking Sample (Excel)</h3>
         <p class="small">Anonymized case list layout & structure for tracking.</p>
         <div class="btns">
-          <a class="btn primary" href="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx" download>Download .xlsx</a>
+          <a class="btn primary" target="_blank" rel="noopener noreferrer" data-office="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx" href="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx">View .xlsx</a>
         </div>
       </div>
 
@@ -256,56 +390,6 @@
         <p class="note">Tip: Office may show “Protected View” for downloaded files — that’s normal.</p>
       </div>
     </div>
-  </section>
-
-
-  <section class="section" id="case-studies">
-    <h2>Case Studies</h2>
-    <p class="lead">Real-world style examples based on my workflow. All details are generalized/anonymized.</p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Operations Tracker + KPI Snapshot</h3>
-        <p class="small"><b>Problem:</b> Team needed a simple way to track daily work and quickly see progress.</p>
-        <p class="small"><b>What I did:</b> Built a structured tracker with clear statuses, date fields, and KPI rollups for weekly reporting.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">Lead_Tracker_and_KPI_Sample.xlsx</span></p>
-        <div class="btns">
-          <a class="btn primary" href="./Lead_Tracker_and_KPI_Sample.xlsx" download>Download Sample</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Inbox Triage + Follow-up SOP</h3>
-        <p class="small"><b>Problem:</b> Messages were getting missed and follow-ups were inconsistent.</p>
-        <p class="small"><b>What I did:</b> Created a repeatable workflow for categorizing, prioritizing, escalating, and tracking follow-ups.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">SOP_Inbox_and_Followups.docx</span></p>
-        <div class="btns">
-          <a class="btn primary" href="./SOP_Inbox_and_Followups.docx" download>Download SOP</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Lead Sheet Standardization</h3>
-        <p class="small"><b>Problem:</b> Lead lists came from different sources and formats, causing duplicates and messy notes.</p>
-        <p class="small"><b>What I did:</b> Standardized columns, cleaned formatting, and organized entries for easier outreach and CRM import.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">Sample_Lead_Sheets.xlsx</span></p>
-        <div class="btns">
-          <a class="btn primary" href="./Sample_Lead_Sheets.xlsx" download>Download Sample</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Case Tracking Layout</h3>
-        <p class="small"><b>Problem:</b> Needed consistent day-by-day tracking across multiple categories without losing structure.</p>
-        <p class="small"><b>What I did:</b> Organized sheets with consistent headers, clean formatting, and status fields for tracking updates.</p>
-        <p class="small"><b>Deliverable:</b> <span class="mono">LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx</span></p>
-        <div class="btns">
-          <a class="btn primary" href="./LIST_OF_CASES_SAMPLE_ANONYMIZED_OPTION1.xlsx" download>Download Sample</a>
-        </div>
-      </div>
-    </div>
-
-    <p class="note">Want a role-specific version (VA / CSR / Lead Gen / Data QA)? I can tailor this page for the position while keeping it universal.</p>
   </section>
 
 
@@ -359,5 +443,59 @@
 </script>
 
 <button class="toTop" id="toTop" aria-label="Scroll to top">↑</button>
+
+<script>
+  // Open Office files in-browser via Microsoft Office Online viewer (works after deployment / public URL).
+  function officeView(filePath){
+    try{
+      const fileUrl = new URL(filePath, window.location.href);
+      const viewerUrl = "https://view.officeapps.live.com/op/view.aspx?src=" + encodeURIComponent(fileUrl.href);
+      window.open(viewerUrl, "_blank", "noopener,noreferrer");
+    }catch(e){
+      window.open(filePath, "_blank", "noopener,noreferrer");
+    }
+    return false;
+  }
+
+  // Bind "View" buttons/links using data-office attributes (keeps markup cleaner).
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-office]");
+    if (!el) return;
+    e.preventDefault();
+    officeView(el.getAttribute("data-office"));
+  });
+
+
+  // Scroll-in reveal (subtle, keeps layout intact)
+  (function(){
+    const targets = [
+      ...document.querySelectorAll("section"),
+      ...document.querySelectorAll(".card"),
+      ...document.querySelectorAll(".stats"),
+      ...document.querySelectorAll(".strip"),
+      ...document.querySelectorAll(".btns")
+    ];
+    const uniq = Array.from(new Set(targets)).filter(Boolean);
+    uniq.forEach(el => el.classList.add("reveal"));
+
+    if (!("IntersectionObserver" in window)){
+      uniq.forEach(el => el.classList.add("in"));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    uniq.forEach(el => io.observe(el));
+  })();
+
+</script>
+
 </body>
 </html>
